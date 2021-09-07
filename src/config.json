@@ -1,5 +1,14 @@
 {
+  "__comment__": {
+    "info": "api is supposed to be DynamoDB table to show the products",
+    "extraInfo": "this is probably the best workaround I can think of :("
+  },
   "api": { 
     "invokeUrl": "https://5bltcq602h.execute-api.us-west-2.amazonaws.com/prod"
-  } 
+  },
+  "cognito": {
+    "REGION": "us-east-1",
+    "USER_POOL_ID": "us-east-1_MNIDgK9SM",
+    "APP_CLIENT_ID": "76gp7u0ue9s0j5bgn690bjv2ag"
+  }
 }

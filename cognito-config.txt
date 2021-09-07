@@ -1,0 +1,22 @@
+Ref: https://www.youtube.com/watch?v=EaDMG4amEfk
+
+1) Create user pool
+
+2) Name: Assign a name for user pool
+
+3) Attributes: Select Username option and check sign in with email (for the case of tutorial)
+- can't change options after creation so decide properly
+
+4) Policies: Leave as default
+
+5) MFA & verifications: Leave as default
+
+6) Message customizations: Select verification type as link
+
+7) Tags: Optional
+
+8) Devices: Leave as default
+
+9) App clients: Create app client name, unselect generate client secret and select sign-in api
+
+10) Triggers: Leave as default 

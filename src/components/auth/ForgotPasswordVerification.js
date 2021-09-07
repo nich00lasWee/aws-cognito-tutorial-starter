@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import FormErrors from "../FormErrors";
 import Validate from "../utility/FormValidation";
+import { Auth } from "aws-amplify";
 
+// Improvement: Make additional field to confirm password
 class ForgotPasswordVerification extends Component {
   state = {
     verificationcode: "",
@@ -35,6 +37,16 @@ class ForgotPasswordVerification extends Component {
     }
 
     // AWS Cognito integration here
+    try {
+      await Auth.forgotPasswordSubmit(
+        this.state.email,
+        this.state.verificationcode,
+        this.state.newpassword
+      );  // Submit required input to reset password
+      this.props.history.push("/changepasswordconfirmation");   // Redirect to password confirmation page
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   onInputChange = event => {
@@ -100,10 +112,11 @@ class ForgotPasswordVerification extends Component {
                 </span>
               </p>
             </div>
+            {/* Make improvement here */}
             <div className="field">
               <p className="control">
                 <button className="button is-success">
-                  Login
+                  Submit
                 </button>
               </p>
             </div>
